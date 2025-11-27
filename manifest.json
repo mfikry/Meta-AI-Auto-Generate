@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "MF Meta AI Batch Prompter",
+  "version": "1.0.0",
+  "description": "Automate Meta AI prompts from .txt with floating panel.",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [],
+  "host_permissions": [
+    "https://meta.ai/*",
+    "https://www.meta.ai/*",
+    "https://*.facebook.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meta.ai/*",
+        "https://www.meta.ai/*",
+        "https://*.facebook.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
